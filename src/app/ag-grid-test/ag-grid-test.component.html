@@ -1,0 +1,15 @@
+<h2>ag grid test</h2>
+<ag-grid-angular
+    #agGridCountries
+    style="width: 500px; height: 100px;" 
+    class="ag-theme-balham"
+    [rowData]="rowData | async"
+    [columnDefs]="columnDefs"
+    rowSelection="multiple"
+    >
+</ag-grid-angular>
+<button (click)="getSelectedRows()">Ver ligas del pais seleccionado</button>
+
+<div *ngFor="let country of countriesSelected">
+  <p>{{country.country_name}}</p>
+</div>
